@@ -1,0 +1,12 @@
+C:\Users\ibrahim\source\repos\Protium\Protium.Data\bin\Debug\net6.0\Protium.Data.deps.json
+C:\Users\ibrahim\source\repos\Protium\Protium.Data\bin\Debug\net6.0\Protium.Data.dll
+C:\Users\ibrahim\source\repos\Protium\Protium.Data\bin\Debug\net6.0\Protium.Data.pdb
+C:\Users\ibrahim\source\repos\Protium\Protium.Data\obj\Debug\net6.0\Protium.Data.csproj.AssemblyReference.cache
+C:\Users\ibrahim\source\repos\Protium\Protium.Data\obj\Debug\net6.0\Protium.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ibrahim\source\repos\Protium\Protium.Data\obj\Debug\net6.0\Protium.Data.AssemblyInfoInputs.cache
+C:\Users\ibrahim\source\repos\Protium\Protium.Data\obj\Debug\net6.0\Protium.Data.AssemblyInfo.cs
+C:\Users\ibrahim\source\repos\Protium\Protium.Data\obj\Debug\net6.0\Protium.Data.csproj.CoreCompileInputs.cache
+C:\Users\ibrahim\source\repos\Protium\Protium.Data\obj\Debug\net6.0\Protium.Data.dll
+C:\Users\ibrahim\source\repos\Protium\Protium.Data\obj\Debug\net6.0\refint\Protium.Data.dll
+C:\Users\ibrahim\source\repos\Protium\Protium.Data\obj\Debug\net6.0\Protium.Data.pdb
+C:\Users\ibrahim\source\repos\Protium\Protium.Data\obj\Debug\net6.0\ref\Protium.Data.dll

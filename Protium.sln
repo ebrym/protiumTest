@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protium.Data", "Protium.Data\Protium.Data.csproj", "{4446FECD-E477-420D-B632-B7A571E572BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protium.Repository", "Protium.Repository\Protium.Repository.csproj", "{F23EC73C-BB9E-4D6A-8BBF-88D6A1DE2FCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protium.Web", "Protium.Web\Protium.Web.csproj", "{49B1CC61-758A-40BD-BE57-51F5E08F1A8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protium.Api", "Protium.Api\Protium.Api.csproj", "{89CD2070-ED16-4482-84D5-4CA481393C06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4446FECD-E477-420D-B632-B7A571E572BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4446FECD-E477-420D-B632-B7A571E572BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4446FECD-E477-420D-B632-B7A571E572BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4446FECD-E477-420D-B632-B7A571E572BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F23EC73C-BB9E-4D6A-8BBF-88D6A1DE2FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F23EC73C-BB9E-4D6A-8BBF-88D6A1DE2FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F23EC73C-BB9E-4D6A-8BBF-88D6A1DE2FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F23EC73C-BB9E-4D6A-8BBF-88D6A1DE2FCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49B1CC61-758A-40BD-BE57-51F5E08F1A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49B1CC61-758A-40BD-BE57-51F5E08F1A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49B1CC61-758A-40BD-BE57-51F5E08F1A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49B1CC61-758A-40BD-BE57-51F5E08F1A8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89CD2070-ED16-4482-84D5-4CA481393C06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89CD2070-ED16-4482-84D5-4CA481393C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89CD2070-ED16-4482-84D5-4CA481393C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89CD2070-ED16-4482-84D5-4CA481393C06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D1D36A1-9BC8-4BAD-B329-83C93BE38A98}
+	EndGlobalSection
+EndGlobal
