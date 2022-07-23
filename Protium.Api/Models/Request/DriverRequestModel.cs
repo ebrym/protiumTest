@@ -4,19 +4,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
-using Protium.Repository.dto;
+using Protium.Api.Models.Response;
 
-namespace Protium.Repository.Dto
+namespace Protium.Api.Models.Request
 {
-    public class DriverDto : BaseDto
+    public class DriverRequestModel 
     {
-
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        public string? Id { get; set; }
         /// <summary>
         /// Gets or sets the first name.
         /// </summary>
         /// <value>
         /// The first name.
         /// </value>
+        [Required]
+        [JsonPropertyName("first_name")]
         public string? FirstName { get; set; }
 
         /// <summary>
@@ -25,6 +33,8 @@ namespace Protium.Repository.Dto
         /// <value>
         /// The last name.
         /// </value>
+        [Required]
+        [JsonPropertyName("last_name")]
         public string? LastName { get; set; }
         /// <summary>
         /// Gets or sets the vehicle plate.
@@ -32,6 +42,8 @@ namespace Protium.Repository.Dto
         /// <value>
         /// The vehicle plate.
         /// </value>
+        [Required]
+        [JsonPropertyName("vehicle_plate")]
         public string? VehiclePlate { get; set; }
         /// <summary>
         /// Gets or sets the start date.
@@ -39,6 +51,8 @@ namespace Protium.Repository.Dto
         /// <value>
         /// The start date.
         /// </value>
+        [Required]
+        [JsonPropertyName("start_date")]
         public DateTime StartDate { get; set; }
         /// <summary>
         /// Gets or sets the expiration date.
@@ -46,14 +60,10 @@ namespace Protium.Repository.Dto
         /// <value>
         /// The expiration date.
         /// </value>
+        [Required]
+        [JsonPropertyName("expiration_date")]
         public DateTime ExpirationDate { get; set; }
-        /// <summary>
-        /// Gets or sets active.
-        /// </summary>
-        /// <value>
-        /// The active.
-        /// </value>
-        public bool Active { get; set; }
+
     }
 }
 

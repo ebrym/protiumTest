@@ -26,34 +26,57 @@ namespace Protium.Repository.Services
         {
             var result = await driverRepository.GetAll();
             var drivers = mapper.Map<List<DriverDto>>(result);
-            return drivers;
+            return  drivers;
         }
 
-        public async Task<DriverDto> GetDriver(string id)
+        public async Task<(bool Succeed, string Message,DriverDto)> GetDriver(string id)
         {
             var result = await driverRepository.Get(id);
+            if (result == null) return (false, "Driver Not found", null);
             var driver = mapper.Map<DriverDto>(result);
-            return driver;
+            return (true, "Success", driver);
         }
 
-        public async Task<DriverDto> InsertDriver(DriverDto driverdto)
+        public async Task<(bool Succeed, string Message, DriverDto)> InsertDriver(DriverDto driverdto)
         {
+            driverdto.Id = Guid.NewGuid().ToString();
             var driver = mapper.Map<Driver>(driverdto);
 
            var result =  await driverRepository.Insert(driver);
-            return mapper.Map<DriverDto>(result);
+
+            if (result == null) return (false, "Could not add Driver", null);
+            return (true,"Driver Added",mapper.Map<DriverDto>(result));
         }
 
-        public async Task<DriverDto> UpdateDriver(DriverDto driver)
+        public async Task<(bool Succeed, string Message, DriverDto)> UpdateDriver(DriverDto driverUpdate)
         {
-            var driverMap = mapper.Map<Driver>(driver);
-            await driverRepository.Update(driverMap);
-            return driver;
+            //
+
+            var driver = await driverRepository.Get(driverUpdate.Id);
+
+            if (driver == null) return (false, "Driver not found", null);
+
+            driver.FirstName = driverUpdate.FirstName;
+            driver.LastName = driverUpdate.LastName;
+            driver.StartDate = driverUpdate.StartDate;
+            driver.ExpirationDate = driverUpdate.ExpirationDate;
+            driver.VehiclePlate = driverUpdate.VehiclePlate;
+            driver.Active=driverUpdate.Active;
+            var result = await driverRepository.Update(driver);
+
+            if (result == null) return (false, "Driver not updated", null);
+            var driverMap = mapper.Map<DriverDto>(driver);
+
+            return (true,"Driver Updated", driverMap);
         }
 
-        public void DeleteDriver(Driver driver)
+        public async Task<(bool Succeed, string Message)> DeleteDriver(string id)
         {
+            var driver = await driverRepository.Get(id);
+            if (driver == null) return (false, "Driver does not exist!");
+
             driverRepository.Delete(driver);
+            return (true, "success");
         }
     }
 }

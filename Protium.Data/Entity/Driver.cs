@@ -12,6 +12,6 @@ namespace Protium.Data.Entity;
             public string? VehiclePlate { get; set; }
             public DateTime StartDate { get; set; }
             public DateTime ExpirationDate { get; set; }
-            public bool Active { get; set; }
+            public bool Active { get; set; } = true;
     }
 

@@ -11,9 +11,9 @@ namespace Protium.Repository.Interface
     public interface IDriverService: IDependencyRegister
     {
         Task<IEnumerable<DriverDto>> GetDrivers();
-        Task<DriverDto> GetDriver(string id);
-        Task<DriverDto> InsertDriver(DriverDto driver);
-        Task<DriverDto> UpdateDriver(DriverDto driver);
-        void DeleteDriver(Driver driver);
+        Task<(bool Succeed, string Message, DriverDto)> GetDriver(string id);
+        Task<(bool Succeed, string Message, DriverDto)> InsertDriver(DriverDto driver);
+        Task<(bool Succeed, string Message, DriverDto)> UpdateDriver(DriverDto driver);
+        Task<(bool Succeed, string Message)> DeleteDriver(string id);
     }
 }

@@ -4,19 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
+using Protium.Api.Models.Response;
 
-namespace Protium.Api.Models
+namespace Protium.Api.Models.Request
 {
-    public class DriverModel
+    public class CreateDriverRequestModel 
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public string? Id { get; set; }
-
+      
         /// <summary>
         /// Gets or sets the first name.
         /// </summary>
@@ -63,15 +57,7 @@ namespace Protium.Api.Models
         [Required]
         [JsonPropertyName("expiration_date")]
         public DateTime ExpirationDate { get; set; }
-        /// <summary>
-        /// Gets or sets active.
-        /// </summary>
-        /// <value>
-        /// The active.
-        /// </value>
-        /// 
-        [JsonPropertyName("active")]
-        public bool Active { get; set; }
+
     }
 }
 

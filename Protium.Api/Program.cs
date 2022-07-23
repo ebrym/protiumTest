@@ -5,7 +5,7 @@ using Protium.Repository.AutofacModule;
 using Microsoft.EntityFrameworkCore;
 using Protium.Repository.Interface;
 using Protium.Repository.Repository;
-using Protium.Repository.Mapping;
+using Protium.Api.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
