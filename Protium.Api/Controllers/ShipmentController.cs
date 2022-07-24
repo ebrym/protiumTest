@@ -98,7 +98,21 @@ namespace Protium.Api.Controllers
 
             return NotFound(result.ToResponse(false, result.Message));
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("status")]
+        [ProducesDefaultResponseType(typeof(ShipmentResponseModel))]
+        public async Task<IActionResult> UpdateShipmentStatus([FromBody] ShipmentStatusUpdateRequestModel shipment)
+        {
+            //var shipment = _mapper.Map<ShipmentDto>(shipmentRequstModel);
+            var result = await _shipmentService.UpdateShipmentStatus(shipment.Status, shipment.Id);
+            if (result.Succeed)
+                return Ok(_mapper.Map<ShipmentResponseModel>(result.Item3).ToResponse());
 
+            return NotFound(result.ToResponse(false, result.Message));
+        }
         /// <summary>
         /// Deletes a new Country
         /// </summary>

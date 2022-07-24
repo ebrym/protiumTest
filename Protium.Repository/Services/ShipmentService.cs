@@ -50,6 +50,7 @@ namespace Protium.Repository.Services
             var driver = await driverRepository.Get(ShipmentDto.DriverId);
             if (driver == null) return (false, "Driver does not exist", null);
 
+            shipment.Status = ShipmentStatus.Init;
             shipment.Driver = driver;
             var result = await shipmentRepository.Insert(shipment);
 
@@ -75,7 +76,6 @@ namespace Protium.Repository.Services
             shipment.PlannedDate = shipmentUpdate.PlannedDate;
             shipment.Comments = shipmentUpdate.Comments;
             shipment.DriverId = shipmentUpdate.DriverId;
-            shipment.Status = shipmentUpdate.Status;
             shipment.ShipmentDate = shipmentUpdate.ShipmentDate;
             shipment.EffectiveDate = shipmentUpdate.EffectiveDate;
 

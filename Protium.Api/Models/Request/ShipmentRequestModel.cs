@@ -47,15 +47,6 @@ namespace Protium.Api.Models.Request
         [JsonPropertyName("associated_barcode")]
         public string? Barcode { get; set; }
         /// <summary>
-        /// Gets or sets the Shipment Status.
-        /// </summary>
-        /// <value>
-        /// The Shipment Status.
-        /// </value>
-        [Required]
-        [JsonPropertyName("status")]
-        public ShipmentStatus Status { get; set; }
-        /// <summary>
         /// Gets or sets the fShipment Date.
         /// </summary>
         /// <value>

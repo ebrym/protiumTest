@@ -5,13 +5,23 @@ using System.Threading.Tasks;
 using System.Text.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
 using Protium.Api.Models.Request;
+using Protium.Data.Common;
 
 namespace Protium.Api.Models.Response
 {
     public class ShipmentResponseModel : ShipmentRequestModel
     {
-     
-       
+
+
+        /// <summary>
+        /// Gets or sets the Shipment Status.
+        /// </summary>
+        /// <value>
+        /// The Shipment Status.
+        /// </value>
+        [Required]
+        [JsonPropertyName("status")]
+        public ShipmentStatus Status { get; set; }
         /// <summary>
         /// Gets or sets the created at.
         /// </summary>

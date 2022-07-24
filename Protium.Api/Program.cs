@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Protium.Repository.Interface;
 using Protium.Repository.Repository;
 using Protium.Api.Mapping;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,19 @@ builder.Services.AddDbContext<DataContext>(option => option.UseInMemoryDatabase(
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+
+//builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerDocument(x =>
+{
+    x.GenerateXmlObjects = true;
+    x.GenerateEnumMappingDescription = true;
+    x.DocumentName = "Protium Shipment Api";
+    x.Title = "Protium Shipment";
+    x.Description = "Protium Shipment Api";
+   
+});
+
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
     .ConfigureContainer<ContainerBuilder>(builder =>
@@ -33,8 +46,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseOpenApi();
+    app.UseSwaggerUi3();
 }
 
 app.UseHttpsRedirection();

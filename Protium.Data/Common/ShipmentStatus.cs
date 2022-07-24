@@ -6,22 +6,28 @@ using System.Threading.Tasks;
 
 namespace Protium.Data.Common
 {
-   public enum ShipmentStatus
+    /// <summary>
+    /// Shipment Status
+    /// </summary>
+    public enum ShipmentStatus
     {
         /// <summary>
-        /// The initial
+        /// Initial
         /// </summary>
         Init,
+
         /// <summary>
-        /// The pickup
+        /// Pickup
         /// </summary>
         PickUp,
+
         /// <summary>
-        /// The shipment is delivered
+        /// Delivered
         /// </summary>
         Delivered,
+
             /// <summary>
-            /// The shipment was returned
+            /// Returned
             /// </summary>
         Returned
 
