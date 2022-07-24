@@ -1,32 +1,48 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Protium.Web.Models;
-using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Protium.Repository.Interface;
+using static Protium.Web.Enums.Enums;
+
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Protium.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IDriverService _driverService;
+        private readonly IShipmentService _shipmentService;
+        public HomeController(IDriverService driverService,
+                                     IShipmentService shipmentService)
         {
-            _logger = logger;
+            _driverService = driverService;
+            _shipmentService = shipmentService;
         }
-
-        public IActionResult Index()
+        // GET: /<controller>/
+        public async Task<IActionResult> Index()
         {
+            try
+            {
+                var driver =await _driverService.GetDrivers();
+                var shipment = await _shipmentService.GetShipments();
+
+
+                ViewBag.TotalDriver = driver.Count();
+                ViewBag.TotalShipment = shipment.Count();
+
+            }
+            catch(Exception)
+            {
+
+            }
+            Alert("Welcome to Ship Manager.", NotificationType.info);
+
             return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

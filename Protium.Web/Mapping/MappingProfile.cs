@@ -4,11 +4,12 @@ using AutoMapper;
 using Protium.Data.Entity;
 using Protium.Repository.Dto;
 using Protium.Repository.Interface;
+using Protium.Web.Models;
 using System;
 using System.Linq;
 using System.Reflection;
 
-namespace Protium.Repository.Mapping
+namespace Protium.Web.Mapping
 {
     /// <summary>
     ///
@@ -19,6 +20,13 @@ namespace Protium.Repository.Mapping
         public MappingProfile()
         {
             CreateMap<Driver, DriverDto>().ReverseMap();
+            CreateMap<DriverDto, DriverModel>().ReverseMap();
+            CreateMap<DriverDto, DriverViewModel>().ReverseMap();
+
+
+            CreateMap<Shipment, ShipmentDto>().ReverseMap();
+            CreateMap<ShipmentDto, ShipmentModel>().ReverseMap();
+            CreateMap<ShipmentDto, ShipmentViewModel>().ReverseMap();
         }
     }
 
