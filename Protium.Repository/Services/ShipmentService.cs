@@ -32,6 +32,36 @@ namespace Protium.Repository.Services
             var shipments = mapper.Map<List<ShipmentDto>>(result);
             return shipments;
         }
+        public async Task<IEnumerable<ShipmentDto>> GetShipments(string include)
+        {
+            List<string> list = new List<string>();
+            list.Add(include);
+            string[] str = list.ToArray();
+
+            var result = await shipmentRepository.GetAll(str);
+            var shipments = result.Select(x => new ShipmentDto
+            {
+                Id = x.Id,
+                Origin = x.Origin,
+                Driver = $"{x.Driver?.FirstName} {x.Driver?.LastName} ({x.Driver?.VehiclePlate})",
+                Destination = x.Destination,
+                PlannedDate = x.PlannedDate,
+                Comments = x.Comments,
+                DriverId = x.DriverId,
+                ShipmentDate = x.ShipmentDate,
+                EffectiveDate = x.EffectiveDate,
+                Barcode = x.Barcode,
+                CreatedAt = x.CreatedAt,    
+                CreatedBy= x.CreatedBy,
+                Status = x.Status,
+                UpdatedAt = x.UpdatedAt,
+                UpdatedBy= x.UpdatedBy
+        }).ToList();
+            //var shipments = mapper.Map<List<ShipmentDto>>(result);
+
+
+            return shipments;
+        }
 
         public async Task<(bool Succeed, string Message, ShipmentDto)> GetShipment(string id)
         {

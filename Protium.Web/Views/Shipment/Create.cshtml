@@ -1,19 +1,19 @@
 ﻿@model Protium.Web.Models.ShipmentModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Shipment";
 }
 
 <div class="card mb-4">
     <!-- Card header -->
     <div class="card-header">
-        <h3 class="mb-0">Add Shipment</h3>
+        <h3 class="mb-0">Add</h3>
     </div>
     <!-- Card body -->
     <div class="card-body">
         <!-- Form groups used in grid -->
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <form asp-action="Create" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group row">

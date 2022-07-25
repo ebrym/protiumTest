@@ -10,6 +10,7 @@
   "profiles": {
     "Protium.Web": {
       "commandName": "Project",
+      "hotReloadProfile": "aspnetcore",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7036;http://localhost:5036",

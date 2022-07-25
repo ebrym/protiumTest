@@ -12,6 +12,7 @@ namespace Protium.Repository.Interface
     public interface IShipmentService : IDependencyRegister
     {
         Task<IEnumerable<ShipmentDto>> GetShipments();
+        Task<IEnumerable<ShipmentDto>> GetShipments(string include);
         Task<(bool Succeed, string Message, ShipmentDto)> GetShipment(string id);
         Task<(bool Succeed, string Message, ShipmentDto)> InsertShipment(ShipmentDto Shipment);
         Task<(bool Succeed, string Message, ShipmentDto)> UpdateShipment(ShipmentDto Shipment);

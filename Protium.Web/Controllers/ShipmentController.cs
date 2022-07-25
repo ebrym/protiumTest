@@ -28,7 +28,7 @@ namespace Protium.Web.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var shipment = await _shipmentService.GetShipments();
+            var shipment = await _shipmentService.GetShipments("Driver");
 
             var shipments = _mapper.Map<List<ShipmentViewModel>>(shipment);
 
@@ -176,7 +176,7 @@ namespace Protium.Web.Controllers
         public async Task<ActionResult> UpdateShipmentStatus(string id)
         {
             var shipment = await _shipmentService.GetShipment(id);
-            var mapDriver = _mapper.Map<ShipmentModel>(shipment.Item3);
+            var mapDriver = _mapper.Map<ShipmentViewModel>(shipment.Item3);
             return PartialView("~/Views/Shared/_UpdateShipmentPartial.cshtml", mapDriver);
         }
 

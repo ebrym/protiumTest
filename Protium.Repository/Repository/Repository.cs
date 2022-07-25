@@ -25,6 +25,10 @@ namespace Protium.Repository.Repository
         {
             return await entities.ToListAsync();
         }
+        public async Task<IEnumerable<T>> GetAll(string[] includes)
+        {
+            return await includes.Aggregate(entities.AsQueryable(), (query, path) => query.Include(path)).ToListAsync();
+        }
         public async Task<T> Get(string id)
         {
             return await entities.SingleOrDefaultAsync(s => s.Id == id);
@@ -57,5 +61,7 @@ namespace Protium.Repository.Repository
             entities.Remove(entity);
             context.SaveChanges();
         }
+
+
     }
 }

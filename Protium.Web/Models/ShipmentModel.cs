@@ -60,6 +60,13 @@ namespace Protium.Web.Models
         [Required]
         public string? DriverId { get; set; }
         /// <summary>
+        /// Gets or sets the Driver.
+        /// </summary>
+        /// <value>
+        /// The Driver.
+        /// </value>
+        public string? Driver { get; set; }
+        /// <summary>
         /// Gets or sets the Planned Date.
         /// </summary>
         /// <value>

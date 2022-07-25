@@ -47,6 +47,7 @@ namespace Protium.Repository.Dto
         /// The Shipment Date.
         /// </value>
         public DateTimeOffset? ShipmentDate { get; set; }
+
         /// <summary>
         /// Gets or sets the Driver Identifier.
         /// </summary>
@@ -54,6 +55,15 @@ namespace Protium.Repository.Dto
         /// The Driver Identifier.
         /// </value>
         public string? DriverId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Driver.
+        /// </summary>
+        /// <value>
+        /// The Driver.
+        /// </value>
+        public string? Driver { get; set; }
+
         /// <summary>
         /// Gets or sets the Planned Date.
         /// </summary>

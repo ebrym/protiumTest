@@ -16,7 +16,8 @@ namespace Protium.Repository.Interface
         //Task<bool> UpdateAsync(T entity);
         //Task<bool> DeleteAsync(string Id);
 
-        Task<IEnumerable<T>> GetAll();
+        Task<IEnumerable<T>> GetAll(); 
+        Task<IEnumerable<T>> GetAll(string[] includes);
         Task<T> Get(string id);
         Task<T> Insert(T entity);
         Task<T> Update(T entity);

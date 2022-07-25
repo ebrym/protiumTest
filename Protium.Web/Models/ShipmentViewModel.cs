@@ -9,13 +9,15 @@ namespace Protium.Web.Models
 {
     public class ShipmentViewModel : ShipmentModel
     {
+
+      
+        public string? ShipmentId { get; set; }
         /// <summary>
         /// Gets or sets the Shipment Status.
         /// </summary>
         /// <value>
         /// The Shipment Status.
         /// </value>
-        [Required]
         public ShipmentStatus Status { get; set; }
         /// <summary>
         /// Gets or sets the created at.

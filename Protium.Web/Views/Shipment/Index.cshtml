@@ -5,7 +5,7 @@
     <div class="card-header border-0">
         <div class="row">
             <div class="col-6">
-                <h3 class="mb-0">Driver</h3>
+                <h3 class="mb-0">Shipment</h3>
             </div>
             <div class="col-6 text-right">
             
@@ -23,7 +23,7 @@
 
     <!-- Light table -->
     <div class="table-responsive">
-        <table class="table align-items-center table-flush">
+        <table id="table"  class="table align-items-center table-flush">
             <thead class="thead-light">
                 <tr>
                     <th>S/N</th>
@@ -61,7 +61,7 @@
                         <b>@Html.DisplayFor(modelItem => item.ShipmentDate)</b>
                     </td>
                      <td class="table-user">
-                        <b>@Html.DisplayFor(modelItem => item.DriverId)</b>
+                        <b>@Html.DisplayFor(modelItem => item.Driver)</b>
                     </td>
                       <td class="table-user">
                         <b>@Html.DisplayFor(modelItem => item.EffectiveDate)</b>
@@ -79,9 +79,9 @@
                         <b>@Html.DisplayFor(modelItem => item.UpdatedAt)</b>
                     </td>
                     <td>
-                        <button id='view-item' class='btn border' data-bs-toggle='modal' data-bs-target='#detailsModal'>
+                        <a id="details" class='btn border changeStatus' data-id="@item.Id">
                          <span class="badge badge-sm bg-gradient-success">Change Status</span>
-                        </button>
+                        </a>
 
                         <a asp-action="Edit" asp-route-id="@item.Id" class="table-action" data-toggle="tooltip" data-original-title="Edit Shipment">
                             <i class="fas fa-user-edit"></i>
@@ -100,18 +100,16 @@
 
 
     <!-- Details Modal -->
-<div id="detailsModal" class="modal" tabindex="-1">
-    <div class="modal fade login in" id="changeStatus" style="display: block;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Update Shipment Status</h4>
-                </div>
-            
-                <div class="modal-body">
-                </div>
-
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Change Shipment Status</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                
             </div>
         </div>
     </div>
@@ -119,17 +117,4 @@
 <!-- End: Details Modal-->
 </div>
 
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#table tbody').on('click', 'tr',function () {
-            var table = $('#table').DataTable();
-            var shipment = table.row(this).data();
-            //console.log(account);
-            $('#ShipmentId').val(shipment.Id);
 
-            $('#more-details-body').load(`../Shipment/UpdateShipmentStatus?id=${shipment.Id}`);
-
-
-        });
-});
-</script>
