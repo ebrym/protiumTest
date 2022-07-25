@@ -143,12 +143,12 @@ namespace Protium.Web.Controllers
 
             if (result.Succeed)
             {
-                Alert("Driver deleted successfully.", NotificationType.success);
+                Alert("Shipment deleted successfully.", NotificationType.success);
                 return RedirectToAction("Index");
             }
             else
             {
-                Alert("SomeProblems were encountered while trying to perform operation.  Please try again.", NotificationType.error);
+                Alert(result.Message, NotificationType.error);
             }
 
             return View("Index");
